@@ -1,0 +1,41 @@
+.single-note {
+    border: 2px black double;
+    margin: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.note-title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.note-body {
+    margin: 0.5rem 0;
+}
+
+.note-author {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-style: italic;
+}
+
+.note-delete {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.new-note {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-note input {
+    width: 100%;
+}
+
+.new-note textarea {
+    width: 100%;
+}
