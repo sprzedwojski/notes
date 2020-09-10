@@ -1,6 +1,10 @@
 import React from 'react'
 import './Notes.css'
 import NewNote from './NewNote'
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import IconButton from '@material-ui/core/IconButton'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 class Notes extends React.Component {
 
@@ -54,17 +58,19 @@ class Notes extends React.Component {
     render() {
         const { notes } = this.state;
         return (
-            <div className="Notes">
+            <Grid container spacing={3}>
                 {notes.map(note => (
-                    <div key={note.title} className="single-note">
+                    <Card key={note.title} className="single-note">
                         <div className="note-title">{note.title}</div>
                         <div className="note-body">{note.body}</div>
-                        <div className="note-author">{note.author}</div>
-                        <button className="note-delete" onClick={(e) => this.deleteNote(note, e)}>Delete</button>
-                    </div>
+                        <IconButton aria-label="delete" className="note-delete"
+                                    onClick={(e) => this.deleteNote(note, e)}>
+                            <DeleteIcon />
+                        </IconButton>
+                    </Card>
                 ))}
                 <NewNote createNote={(title, body) => this.createNote(title, body)}/>
-            </div>
+            </Grid>
         )
     }
 }

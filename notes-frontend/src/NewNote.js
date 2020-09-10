@@ -1,4 +1,6 @@
 import React from 'react'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 class NewNote extends React.Component {
     constructor(props) {
@@ -37,13 +39,17 @@ class NewNote extends React.Component {
         return (
             <div className="single-note">
                 <form onSubmit={this.handleSubmit} className="new-note">
-                    <label>
-                        <input type="text" value={this.state.title} onChange={this.handleChangeTitle}/>
-                    </label>
-                    <label>
-                        <textarea rows="5" value={this.state.body} onChange={this.handleChangeBody}/>
-                    </label>
-                    <input type="submit" value="Save"/>
+                    <TextField id="standard-basic" placeholder="Title" value={this.state.title}
+                               onChange={this.handleChangeTitle} />
+                    <TextField
+                        id="outlined-multiline-flexible"
+                        placeholder="Your note"
+                        multiline
+                        rows={5}
+                        value={this.state.body}
+                        onChange={this.handleChangeBody}
+                    />
+                    <Button type="submit" variant="outlined" style={{marginTop: '1rem'}}>Save</Button>
                 </form>
             </div>
         )

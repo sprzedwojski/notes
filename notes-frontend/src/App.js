@@ -1,15 +1,17 @@
 import React from 'react'
 import './App.css'
 import Notes from './Notes'
+import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
 
 function App() {
     return (
-        <div>
-            <h1 className="title">Welcome to SzymNotes!</h1>
-            <div>
-                <Notes/>
-            </div>
-        </div>
+        <Container maxWidth="lg">
+            <Typography variant="h4" style={{margin: '1rem 0'}}>
+                Welcome to SzymNotes!
+            </Typography>
+            <Notes/>
+        </Container>
     )
 }
 
