@@ -12,11 +12,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 // if Spring MVC is on classpath and no CorsConfigurationSource is provided,
                 // Spring Security will use CORS configuration provided to Spring MVC
-                .cors()
-                .and()
+                .cors().and().csrf().disable() // until I disabled csrf, I couldn't perform PUT, POST or DELETE requests
+//                .and()
                 .authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .httpBasic();
+                .anyRequest().permitAll();
+//                .authenticated()
+//                .and()
+//                .httpBasic();
     }
 }

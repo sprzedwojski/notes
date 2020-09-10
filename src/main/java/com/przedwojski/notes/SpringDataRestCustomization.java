@@ -11,6 +11,9 @@ public class SpringDataRestCustomization implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 
         config.getCorsRegistry().addMapping("/**")
+                .allowedHeaders("*")
+//                .allowedMethods("POST", "PUT", "GET", "DELETE", "OPTIONS")
+                .allowedMethods("*")
                 .allowedOrigins("http://localhost:3000");
     }
 }
